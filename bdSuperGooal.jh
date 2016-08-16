@@ -1,0 +1,84 @@
+
+entity Shop{
+	nom String required
+    quartier String
+}
+entity Employe{
+	nom String required
+    prenom String
+    photo ImageBlob
+    sexe Sexe required
+    fonction Fonction
+    salaireBase Double
+}
+enum Fonction{
+	MANAGER,
+    CAISSE,
+    SECURITE,
+    NETOYAGE
+}
+
+enum Sexe{
+	MASCULIN,
+    FEMININ
+}
+
+entity Prime{
+	montant Double required
+    dateFixation LocalDate
+    raison String
+}
+
+entity Work{
+	date LocalDate
+    heuredebut String required
+    heureFin String required
+    nombreTickets Integer required
+    sommeEncaissee Double required
+}
+entity RecetteJournaliere{
+	date LocalDate
+    montant Double
+}
+
+entity Absence{
+	date LocalDate
+    justifie Boolean
+    justification String
+}
+entity Conge{
+	dateDebut LocalDate
+    dateFin LocalDate
+}
+
+entity QuotaHebdo{
+	montant Double required
+    primeHebdo Double
+}
+
+relationship OneToMany{
+	User{shop} to Shop
+}
+
+relationship OneToMany{
+	Shop{employe} to Employe
+}
+relationship OneToMany{
+	Employe{prime} to Prime
+}
+relationship OneToMany{
+	Employe{absence} to Absence
+}
+relationship OneToMany{
+	Employe {work} to Work
+}
+relationship OneToMany{
+	Shop{quotaHebdo} to QuotaHebdo
+}
+relationship OneToMany{
+	Employe{conge} to Conge
+}
+relationship OneToMany{
+	Shop{recetteJounaliere} to RecetteJournaliere
+}
+paginate all with pagination

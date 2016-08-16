@@ -1,0 +1,31 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "shop",
+      "otherEntityName": "shop",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "montant",
+      "fieldType": "Double",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "primeHebdo",
+      "fieldType": "Double"
+    }
+  ],
+  "changelogDate": "20160723052303",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "entityTableName": "quota_hebdo"
+}

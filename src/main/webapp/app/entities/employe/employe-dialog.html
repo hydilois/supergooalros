@@ -1,0 +1,100 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEmployeLabel">Create or edit a Employe</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.employe.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.employe.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_nom">Nom</label>
+            <input type="text" class="form-control" name="nom" id="field_nom"
+                    ng-model="vm.employe.nom"
+                    required />
+            <div ng-show="editForm.nom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nom.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prenom">Prenom</label>
+            <input type="text" class="form-control" name="prenom" id="field_prenom"
+                    ng-model="vm.employe.prenom"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setPhoto($file, vm.employe)" ngf-pattern="'image/*'">
+            <label class="control-label" for="field_photo">Photo</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.employe.photoContentType + ';base64,' + vm.employe.photo}}" style="max-height: 100px;" ng-if="vm.employe.photo"/>
+                <div ng-if="vm.employe.photo" class="help-block clearfix">
+                    <span class="pull-left">{{vm.employe.photoContentType}}, {{vm.byteSize(vm.employe.photo)}}</span>
+                    <button ng-click="vm.employe.photo=null;vm.employe.photoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setPhoto($file, vm.employe)" accept="image/*">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="photo" id="field_photo"
+                    ng-model="vm.employe.photo"
+                     />
+            <input type="hidden" class="form-control" name="photoContentType" id="field_photoContentType"
+                    ng-model="vm.employe.photoContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_sexe">Sexe</label>
+            <select class="form-control" name="sexe" ng-model="vm.employe.sexe" id="field_sexe" required>
+                <option value="MASCULIN">MASCULIN</option>
+                <option value="FEMININ">FEMININ</option>
+            </select>
+            <div ng-show="editForm.sexe.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.sexe.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_fonction">Fonction</label>
+            <select class="form-control" name="fonction" ng-model="vm.employe.fonction" id="field_fonction">
+                <option value="MANAGER">MANAGER</option>
+                <option value="CAISSE">CAISSE</option>
+                <option value="SECURITE">SECURITE</option>
+                <option value="NETOYAGE">NETOYAGE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_salaireBase">Salaire Base</label>
+            <input type="number" class="form-control" name="salaireBase" id="field_salaireBase"
+                    ng-model="vm.employe.salaireBase"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_shop">Shop</label>
+            <select class="form-control" id="field_shop" name="shop" ng-model="vm.employe.shop" ng-options="shop as shop.id for shop in vm.shops track by shop.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

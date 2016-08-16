@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span>Employe</span> {{vm.employe.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Nom</span></dt>
+        <dd>
+            <span>{{vm.employe.nom}}</span>
+        </dd>
+        <dt><span>Prenom</span></dt>
+        <dd>
+            <span>{{vm.employe.prenom}}</span>
+        </dd>
+        <dt><span>Photo</span></dt>
+        <dd>
+            <div ng-if="vm.employe.photo">
+                <a ng-click="vm.openFile(vm.employe.photoContentType, vm.employe.photo)">
+                    <img data-ng-src="{{'data:' + vm.employe.photoContentType + ';base64,' + vm.employe.photo}}" style="max-width: 100%;"/>
+                </a>
+                {{vm.employe.photoContentType}}, {{vm.byteSize(vm.employe.photo)}}
+            </div>
+        </dd>
+        <dt><span>Sexe</span></dt>
+        <dd>
+            <span translate="{{'supergooalrosApp.Sexe.' + vm.employe.sexe}}">{{vm.employe.sexe}}</span>
+        </dd>
+        <dt><span>Fonction</span></dt>
+        <dd>
+            <span translate="{{'supergooalrosApp.Fonction.' + vm.employe.fonction}}">{{vm.employe.fonction}}</span>
+        </dd>
+        <dt><span>Salaire Base</span></dt>
+        <dd>
+            <span>{{vm.employe.salaireBase}}</span>
+        </dd>
+        <dt><span>Shop</span></dt>
+        <dd>
+            <a ui-sref="shop-detail({id:vm.employe.shop.id})">{{vm.employe.shop.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

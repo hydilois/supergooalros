@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052356_added_entity_Shop.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052357_added_entity_Employe.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052358_added_entity_Prime.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052359_added_entity_Work.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052300_added_entity_RecetteJournaliere.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052301_added_entity_Absence.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052302_added_entity_Conge.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052303_added_entity_QuotaHebdo.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20160723052356_added_entity_constraints_Shop.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052357_added_entity_constraints_Employe.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052358_added_entity_constraints_Prime.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052359_added_entity_constraints_Work.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052300_added_entity_constraints_RecetteJournaliere.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052301_added_entity_constraints_Absence.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052302_added_entity_constraints_Conge.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160723052303_added_entity_constraints_QuotaHebdo.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

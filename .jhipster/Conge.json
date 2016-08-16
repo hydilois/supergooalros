@@ -1,0 +1,28 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "employe",
+      "otherEntityName": "employe",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "dateDebut",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "dateFin",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "changelogDate": "20160723052302",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "entityTableName": "conge"
+}

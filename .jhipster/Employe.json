@@ -1,0 +1,85 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "shop",
+      "otherEntityName": "shop",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "one-to-many",
+      "relationshipName": "prime",
+      "otherEntityName": "prime",
+      "otherEntityRelationshipName": "employe"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipType": "one-to-many",
+      "relationshipName": "absence",
+      "otherEntityName": "absence",
+      "otherEntityRelationshipName": "employe"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipType": "one-to-many",
+      "relationshipName": "work",
+      "otherEntityName": "work",
+      "otherEntityRelationshipName": "employe"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipType": "one-to-many",
+      "relationshipName": "conge",
+      "otherEntityName": "conge",
+      "otherEntityRelationshipName": "employe"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "photo",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "sexe",
+      "fieldType": "Sexe",
+      "fieldValues": "MASCULIN,FEMININ",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "fonction",
+      "fieldType": "Fonction",
+      "fieldValues": "MANAGER,CAISSE,SECURITE,NETOYAGE"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "salaireBase",
+      "fieldType": "Double"
+    }
+  ],
+  "changelogDate": "20160723052357",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "entityTableName": "employe"
+}

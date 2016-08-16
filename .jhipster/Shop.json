@@ -1,0 +1,52 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "one-to-many",
+      "relationshipName": "employe",
+      "otherEntityName": "employe",
+      "otherEntityRelationshipName": "shop"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipType": "one-to-many",
+      "relationshipName": "quotaHebdo",
+      "otherEntityName": "quotaHebdo",
+      "otherEntityRelationshipName": "shop"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipType": "one-to-many",
+      "relationshipName": "recetteJounaliere",
+      "otherEntityName": "recetteJournaliere",
+      "otherEntityRelationshipName": "shop"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "user",
+      "otherEntityName": "user",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "quartier",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160723052356",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "entityTableName": "shop"
+}

@@ -1,0 +1,28 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "shop",
+      "otherEntityName": "shop",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "montant",
+      "fieldType": "Double"
+    }
+  ],
+  "changelogDate": "20160723052300",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "entityTableName": "recette_journaliere"
+}

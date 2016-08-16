@@ -1,0 +1,33 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "employe",
+      "otherEntityName": "employe",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "justifie",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "justification",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160723052301",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no",
+  "entityTableName": "absence"
+}

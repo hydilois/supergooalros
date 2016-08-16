@@ -1,0 +1,54 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myQuotaHebdoLabel">Create or edit a Quota Hebdo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.quotaHebdo.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.quotaHebdo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_montant">Montant</label>
+            <input type="number" class="form-control" name="montant" id="field_montant"
+                    ng-model="vm.quotaHebdo.montant"
+                    required />
+            <div ng-show="editForm.montant.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.montant.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.montant.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_primeHebdo">Prime Hebdo</label>
+            <input type="number" class="form-control" name="primeHebdo" id="field_primeHebdo"
+                    ng-model="vm.quotaHebdo.primeHebdo"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_shop">Shop</label>
+            <select class="form-control" id="field_shop" name="shop" ng-model="vm.quotaHebdo.shop" ng-options="shop as shop.id for shop in vm.shops track by shop.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>
